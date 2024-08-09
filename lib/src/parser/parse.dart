@@ -632,10 +632,10 @@ class Parser {
       // number
       case 'n':
       default:
-        var formulaNode = node.findElements('f');
-        if (formulaNode.isNotEmpty) {
-          value = FormulaCellValue(_parseValue(formulaNode.first).toString());
-        } else {
+//        var formulaNode = node.findElements('f');
+//        if (formulaNode.isNotEmpty) {
+//          value = FormulaCellValue(_parseValue(formulaNode.first).toString());
+//        } else {
           final vNode = node.findElements('v').firstOrNull;
           if (vNode == null) {
             value = null;
@@ -654,7 +654,7 @@ class Parser {
             final v = _parseValue(vNode);
             value = NumFormat.defaultNumeric.read(v);
           }
-        }
+//        }
     }
 
     sheetObject.updateCell(
